@@ -10,14 +10,25 @@
 
 <body>
 	
-	
+	<h1>Calculadora Básica</h1>
 
 	<form name="fo">
 
 		<table>
 			<tr>
-				<td colspan="5"><input type="text" name="valores" id="valores" onkeypress="return solonumeros(event)"></td>
+				<td colspan="5" id="vista"><input type="text" name="valores" id="valores" onkeypress="return solonumeros(event)"></td>
 			</tr>
+
+      <tr>
+
+        <td><input type="button" value="SenX"></td>
+        <td><input type="button" value="CosX"></td>
+        <td><input type="button" value="TanX"></td>
+        <td><input type="button" value="√"></td>
+        <td><input type="button" value="χ²"></td>
+   
+      </tr>
+
 
 			<tr>
               <td><input type="button" value="7" onClick="capturar(value)"></td>
@@ -39,17 +50,16 @@
               <td><input type="button" value="1" onClick="capturar(value)"></td>
               <td><input type="button" value="2" onClick="capturar(value)"></td>
               <td><input type="button" value="3" onClick="capturar(value)"></td>
-              <td><input type="button" value="<-" onClick="eliminar()"></td>
+              <td><input type="button" value="<<" onClick="eliminar()"></td>
               <td><input type="button" value="C" onClick="borrartodo()"></td>
 			</tr>
 
 			<tr>
-              <td colspan="2"><input type="button" value="0" onClick="capturar(value)"></td>
-              <td></td>
+              <td colspan="3"><input type="button" value="0" onClick="capturar(value)"></td>
               <td colspan="2"><input type="button" value="=" onClick="calcular()"></td>
+
              
 			</tr>
-
 
 		</table>
 
