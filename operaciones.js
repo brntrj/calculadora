@@ -93,3 +93,40 @@ function calcular(){
 	var resultado=eval(document.fo.valores.value);
 	document.fo.valores.value=resultado;
 }
+
+//funcion Sen x Cos X Tan x  X^2 √
+function seno(){
+	//numeros=eval(document.fo.valores.value);
+	numeros= document.getElementById("valores").value;
+      resultado=Math.sin(numeros)
+      document.fo.valores.value=resultado;
+         }
+
+function coseno(){
+	//numeros=eval(document.fo.valores.value);
+	numeros= document.getElementById("valores").value;
+      resultado=Math.cos(numeros)
+      document.fo.valores.value=resultado;
+         }
+
+ function tangente()
+ {
+ 	numeros= document.getElementById("valores").value;
+      resultado=Math.tan(numeros)
+      document.fo.valores.value=resultado;
+ }
+
+ function raizcuadrada(){
+
+ 	numeros= document.getElementById("valores").value;
+      resultado=Math.sqrt(numeros)
+      document.fo.valores.value=resultado;
+ 	
+ }
+
+ function x2(){
+ 	numeros= document.getElementById("valores").value;
+      resultado= numeros*numeros;
+      document.fo.valores.value=resultado;
+ 	
+ }
