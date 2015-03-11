@@ -130,3 +130,14 @@ function coseno(){
       document.fo.valores.value=resultado;
  	
  }
+ var x;
+function graficar(){
+
+numeros= document.getElementById("valores").value;
+resultado=x*numeros;
+comprobar(num);
+
+	for (var i = x - 1; i >= x; i++) {
+		
+	}
+}
