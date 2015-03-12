@@ -21,7 +21,7 @@
 
       <tr>
 
-        <td><input type="button" value="SenX" onClick="seno(value)"></td>
+        <td><input type="button" value="SenX" onClick="seno(value)" onclick="sin( 'sen' )"></td>
         <td><input type="button" value="CosX" onClick="coseno(value)"></td>
         <td><input type="button" value="TanX" onClick="tangente(value)"></td>
         <td><input type="button" value="√" onClick="raizcuadrada(value)"></td>
@@ -60,10 +60,11 @@
 
              
 			</tr>
+      <tr>
+        <td colspan="5"><input type='button' value='Graficar' onClick="graficar()"></td>
+      </tr>
 
 		</table>
-
-
 	</form>
 
 <br>
@@ -79,17 +80,73 @@ var c = document.getElementById("myCanvas");
 var ctx = c.getContext("2d");
 ctx.moveTo(360,180);
 ctx.lineTo(0,180);
-ctx.stroke();
-</script>
-
-
-<script>
-var c = document.getElementById("myCanvas");
-var ctx = c.getContext("2d");
 ctx.moveTo(180,360);
 ctx.lineTo(180,0);
 ctx.stroke();
 </script>
 
+<script>
+var c = document.getElementById("myCanvas");
+var dibujar = c.getContext("2d");
+for(i = 0; i<600; i+=30){
+
+   dibujar.moveTo(180-i, 170);
+   dibujar.lineTo(180-i, 190);
+
+   dibujar.moveTo(180+i, 170);
+   dibujar.lineTo(180+i, 190);
+
+   dibujar.moveTo(190, 200+i);
+   dibujar.lineTo(170, 200+i);
+   
+   dibujar.moveTo(190, 200-i);
+   dibujar.lineTo(170, 200-i);
+   
+   if(i > 0){ 
+  dibujar.fillText('-'+i,180-(i+8), 200);
+  dibujar.fillText(i,180+(i-8), 200);
+  
+  dibujar.fillText('-'+i,190, 190+i+0);
+  dibujar.fillText(i,190, 190-i+0);
+   }
+   
+  }
+  dibujar.stroke();
+</script>
+<script>
+function graficar(){
+  var c = document.getElementById("myCanvas");
+  var dibujar = c.getContext("2d");
+  dibujar.moveTo(120, 50);
+ mxd = 300;
+ myd = 200;
+ 
+ mxi = 300;
+ myi = 200;
+ 
+
+ for (x = 0; x<300; x++){
+  y = Math.sin(x)   
+  p=x;
+  t = y*9; 
+  //Grafico lado derecho
+  mxd += p;
+  myd -= t;
+
+    dibujar.moveTo(mxd, myd);
+  dibujar.lineTo(mxd-p, myd+t);
+  
+    //Grafico lado Izquierdo
+  mxi -= p;
+  myi -= t;
+
+    dibujar.moveTo(mxi, myi);
+  dibujar.lineTo(mxi+p, myi+t);
+  
+ }
+  dibujar.stroke();
+}
+
+</script>
 </body>
 </html>
